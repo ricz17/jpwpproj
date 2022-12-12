@@ -14,3 +14,4 @@ C:\Users\rysio\Desktop\proba_01\piramida1\bin\Debug\netcoreapp3.1\piramida1.pdb
 C:\Users\rysio\Desktop\proba_01\piramida1\obj\Debug\netcoreapp3.1\piramida1.dll
 C:\Users\rysio\Desktop\proba_01\piramida1\obj\Debug\netcoreapp3.1\piramida1.pdb
 C:\Users\rysio\Desktop\proba_01\piramida1\obj\Debug\netcoreapp3.1\piramida1.genruntimeconfig.cache
+C:\Users\rysio\Desktop\proba_01\piramida1\obj\Debug\netcoreapp3.1\piramida1.csproj.AssemblyReference.cache
