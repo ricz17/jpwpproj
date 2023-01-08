@@ -16,12 +16,12 @@ namespace CustomPictureBoxControl
             container.Add(this);
         }
         Point point;
-        protected override void OnMouseDown(MouseEventArgs e)
+        protected override void OnMouseDown(MouseEventArgs e)//ruchomy obrazek
         {
             point = e.Location;
             base.OnMouseDown(e);
         }
-        protected override void OnMouseMove(MouseEventArgs e)
+        protected override void OnMouseMove(MouseEventArgs e)//ruchomy obrazek
         {
             if (e.Button == MouseButtons.Left)
             {
