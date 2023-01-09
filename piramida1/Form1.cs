@@ -197,16 +197,11 @@ namespace piramida1
 
 
             this.clickCounter++;
-            if (this.clickCounter > 6) // arbitrary number
+            if (this.clickCounter > 4) // licznik klikniec
             {
                 suma = 0;
                 this.clickCounter = 0;
             }
-        }
-
-        private void customPictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -240,24 +235,169 @@ namespace piramida1
                     label4.Text = Convert.ToString(suma);
                 }
 
-                if (liczba > (kaloria - (kaloria / 10)) && liczba < (kaloria + (kaloria / 10)) && liczba != kaloria)
+                if (liczba > (kaloria - (kaloria / 5)) && liczba < (kaloria + (kaloria / 5)) && liczba != kaloria)
                 {
                     punkty = 5;
                     suma = punkty + suma;
                     label4.Text = Convert.ToString(suma);
-                }
-            
+                    if (liczba > (kaloria - (kaloria / 10)) && liczba < (kaloria + (kaloria / 10)) && liczba != kaloria)
+                    {
+                        punkty = 3;
+                        suma = punkty + suma;
+                        label4.Text = Convert.ToString(suma);
+                    }
+            }   
         }
 
 
-        private void label4_Click(object sender, EventArgs e)
+        private void pictureBox2_DragEnter(object sender, DragEventArgs e)
         {
-
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void pictureBox2_DragDrop(object sender, DragEventArgs e)
         {
+            pictureBox2.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
 
+        private void customPictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                customPictureBox1.DoDragDrop(customPictureBox1.Image, DragDropEffects.Copy);
+        }
+
+        private void sd_Load(object sender, EventArgs e)
+        {
+            pictureBox2.AllowDrop = true;
+            pictureBox3.AllowDrop = true;
+            pictureBox4.AllowDrop = true;
+            pictureBox5.AllowDrop = true;
+            pictureBox6.AllowDrop = true;
+            pictureBox7.AllowDrop = true;
+            pictureBox8.AllowDrop = true;
+            customPictureBox1.AllowDrop = true;
+        }
+
+        private void customPictureBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+
+        private void pictureBox3_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox3.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox3_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox4_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox4.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox4_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox5_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox5_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox5.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox6_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox6.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox6_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox7_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox7.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox7_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox8_DragDrop(object sender, DragEventArgs e)
+        {
+            pictureBox8.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap, true);
+        }
+
+        private void pictureBox8_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) && (e.AllowedEffect & DragDropEffects.Copy) != 0)
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("słodkie i słone", pictureBox2);
+        }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("produkty mleczne", pictureBox3);
+        }
+
+        private void pictureBox4_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("mięso,jaja", pictureBox4);
+        }
+
+        private void pictureBox5_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("tłuszcze i oleje", pictureBox5);
+        }
+
+        private void pictureBox6_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("ziarna i ziemiaki", pictureBox6);
+        }
+
+        private void pictureBox7_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("owoce i warzywa", pictureBox7);
+        }
+
+        private void pictureBox8_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("napoje bezalkoholowe", pictureBox8);
         }
     }
     }
